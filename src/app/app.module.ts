@@ -8,6 +8,7 @@ import { APP_ROUTES } from './app.routes';
 //modules
 import {PagesModule } from './pages/pages.module';
 
+//componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
@@ -22,8 +23,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    
-  ],
+],
   imports: [
     BrowserModule,
     APP_ROUTES,
