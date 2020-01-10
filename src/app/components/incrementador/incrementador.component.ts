@@ -6,7 +6,9 @@ import { Component, OnInit, Input, Output, ViewChild, EventEmitter, ElementRef }
   styles: []
 })
 export class IncrementadorComponent implements OnInit {
-  // @ViewChild('txtProgess') txtProgess: ElementRef;
+  
+  @ViewChild('txtProgress',{static:true}) txtProgress: ElementRef;
+
   @Input('nombre') leyenda: string = 'Leyenda';
   @Input() progreso: number = 50;
 
@@ -18,7 +20,7 @@ export class IncrementadorComponent implements OnInit {
   }
   onChanges( newValue: number){
     // let elemHTML: any = document.getElementsByName('progreso')[0];
-    // console.log( this.txtProgess );
+    // console.log( this.txtProgress );
     if( newValue >=100)    {
       this.progreso = 100;
     } 
@@ -28,8 +30,9 @@ export class IncrementadorComponent implements OnInit {
     else{
       this.progreso = newValue;
     }
-    // this.txtProgess.nativeElement.value = this.progreso;
+    this.txtProgress.nativeElement.value = this.progreso;
     // elemHTML.value = Number( this.progreso );
+    
     this.cambioValor.emit( this.progreso );
   }
   
@@ -47,6 +50,6 @@ export class IncrementadorComponent implements OnInit {
     }
     this.progreso = this.progreso + valor;
     this.cambioValor.emit( this.progreso );
-    // this.txtProgess.nativeElement.focus();
+    this.txtProgress.nativeElement.focus();
   }
 }

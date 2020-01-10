@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-graficodona',
@@ -6,10 +6,11 @@ import { Component,Input, OnInit } from '@angular/core';
   styles: []
 })
 export class GraficodonaComponent implements OnInit {
-  @Input() data: number[] = [24, 30, 46];
-  @Input() labels: string[] = ['Con Frijoles', 'Con Natilla', 'Con tocino'];
-  @Input() chartType: string = 'doughnut';
-  @Input() leyenda: string = 'El pan se come con';
+
+  @Input('ChartLabels')  doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  @Input('ChartData')  doughnutChartData: number[] = [350, 450, 100];
+  @Input('ChartType')  doughnutChartType: string = 'doughnut';
+
 
   graficos: any = {
     'grafico1': {
