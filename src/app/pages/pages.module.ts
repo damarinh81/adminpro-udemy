@@ -12,6 +12,7 @@ import { PAGES_ROUTES } from './pages.routes';
 import {FormsModule } from '@angular/forms';
 //temporalmente
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -23,6 +24,7 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
         Graficas1Component,
         IncrementadorComponent,
         GraficodonaComponent,
+        AccountSettingsComponent,
     ],
     exports: [
         DashboardComponent,
